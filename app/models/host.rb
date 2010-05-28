@@ -83,6 +83,10 @@ class Host < Puppet::Rails::Host
 
   before_validation :normalize_addresses, :normalize_hostname
 
+  def self.unconfigured?
+    Host.all.count != 0
+  end
+
   def <=>(other)
     self.name <=> other.name
   end
