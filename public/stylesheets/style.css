@@ -14,6 +14,13 @@ h1 {
   margin:0;
 }
 
+h2 {
+  font-variant:small-caps;
+  font-size:14px;
+  padding:0;
+  margin:0;
+}
+
 a img {
   border: none;
 }
@@ -304,4 +311,13 @@ div#run_distribution {
 #settings li {
   list-style-type:none;
   padding:0 0 8px;
+}
+
+#welcome {
+  width: 85%;
+  margin: 0 auto;
+  background-color: #FFF;
+  padding: 20px 40px;
+  border: solid 1px black;
+  margin-top: 20px;
 }

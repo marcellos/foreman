@@ -17,7 +17,7 @@ class Domain < ActiveRecord::Base
   before_destroy Ensure_not_used_by.new(:hosts, :subnets)
 
   def self.unconfigured?
-    Domain.all.count != 0
+    Domain.count == 0
   end
 
   def to_label
