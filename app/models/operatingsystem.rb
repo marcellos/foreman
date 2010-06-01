@@ -15,6 +15,10 @@ class Operatingsystem < ActiveRecord::Base
   before_destroy Ensure_not_used_by.new(:hosts)
   acts_as_audited
 
+  def self.unconfigured?
+    Operatingsystem.all.count != 0 #and SETTINGS[:unattended]
+  end
+
   # Emulate multiple inheritance from a virtual Family class
   def after_initialize
     extend eval("Family::#{Family::FAMILIES[family_id]}") if self.respond_to?(:family_id) and not family_id.nil?
